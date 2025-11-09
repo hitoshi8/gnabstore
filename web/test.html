@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Đào Lửa</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="top-style1">
+            <a class="signlogo" href="/Home.html">GnaB Store</a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="top-style2 desktop-nav">
+            <a href="/Home.html" class="home-button">Trang Chủ</a>
+            <a href="/NapGame.html" class="napgame-button">Nạp Game</a>
+            <a href="/Stock.html" class="stock-button">Đơn Hàng</a>
+            
+            <div class="dropdown" id="napTienDropdown">
+                <button class="dropdown-btn">
+                    Nạp Tiền
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <!-- Dropdown content giữ nguyên -->
+                </div>
+            </div>
+            
+            <a href="/Login.html" class="login-button">Đăng Nhập</a>
+            <a href="/Register.html" class="register-button">Đăng Ký</a>
+        </nav>
+
+        <!-- Mobile Hamburger Menu -->
+        <div class="mobile-nav">
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="/Home.html" class="mobile-nav-item">Trang Chủ</a>
+                <a href="/NapGame.html" class="mobile-nav-item">Nạp Game</a>
+                <a href="/Stock.html" class="mobile-nav-item">Đơn Hàng</a>
+                
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn">
+                        Nạp Tiền <span>▼</span>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="#" class="mobile-dropdown-item">Nạp qua ngân hàng</a>
+                        <a href="#" class="mobile-dropdown-item">Nạp qua thẻ cào</a>
+                        <a href="#" class="mobile-dropdown-item">Nạp qua ví điện tử</a>
+                    </div>
+                </div>
+                
+                <a href="/Login.html" class="mobile-nav-item login-button">Đăng Nhập</a>
+                <a href="/Register.html" class="mobile-nav-item register-button">Đăng Ký</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nội dung chính -->
+    <div class="container">
+        <!-- Your content here -->
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập - GnaB Store</title>
+    <link rel="stylesheet" href="stylelogin.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-background">
+            <!-- Ảnh nền full màn hình -->
+            <img src="images/background.jpg" alt="Background" class="bg-image">
+        </div>
+        
+        <div class="login-box">
+            <div class="login-header">
+                <a class="signlogo" href="/Home.html"> GnaB Store</a>
+                <p> Điền thông tin của bạn để <b>ĐĂNG NHẬP</b> </p>
+            </div>
+            
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" placeholder="Nhập tên đăng nhập" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+                </div>
+                
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox"> Ghi nhớ đăng nhập
+                    </label>
+                    <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                </div>
+                
+                <button type="submit" class="login-btn">Đăng Nhập</button>
+                
+                <div class="divider">
+                    <span>hoặc</span>
+                </div>
+                
+                <button type="button" class="register-btn">Tạo Tài Khoản Mới</button>
+            </form>
+            
+            <div class="login-footer">
+                <a href="/Home.html" class="back-home">← Quay lại trang chủ</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="loginscript.js"></script>
+</body>
+</html>

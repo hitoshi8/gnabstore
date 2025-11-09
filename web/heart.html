@@ -1,0 +1,85 @@
+<title> Heart </title>
+<style>
+  body { margin: 0; overflow: hidden; background: #CCE46B; }
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    color: white;
+    text-align:center;
+    text-shadow: 2px 2px 4px #000000;
+    /* z-index: 10; */
+  }
+</style>
+<canvas id="canvas"></canvas>
+<script>
+  var canvas = document.getElementById('canvas');
+  var context = canvas.getContext('2d');
+  var W = window.innerWidth;
+  var H = window.innerHeight;
+  canvas.width = W;
+  canvas.height = H;
+  var hearts = [];
+  var num_hearts = 100;
+  function Heart(x, y, s, a, b) {
+    this.x = x;
+    this.y = y;
+    this.s = s;
+    this.a = a;
+    this.b = b;
+    this.r = Math.random() * 60 + 20; // Radius
+    this.speed = Math.random() * 2 + 1; // Speed
+    this.opacity = 1; // Opacity
+    this.vx = Math.random() * 4 - 2; // Velocity X
+    this.vy = Math.random() * 4 - 2; // Velocity Y
+    this.gravity = 0.05; // Gravity
+    this.draw = function() {
+      context.save();
+      context.translate(this.x, this.y);
+      context.rotate(this.a);
+      context.scale(this.s, this.s);
+      context.beginPath();
+      context.moveTo(0, 0);
+      context.bezierCurveTo(5, -5, 10, -10, 0, -20);
+      context.bezierCurveTo(-10, -10, -5, -5, 0, 0);
+      context.fillStyle = 'rgba(255, 0, 0, ' + this.opacity + ')';
+      context.shadowBlur = 10;
+      context.shadowColor = "red";
+      context.fill();
+      context.restore();
+    };
+    this.update = function() {
+      this.y += this.speed;
+      this.opacity -= 0.01;
+      this.x += this.vx;
+      this.y += this.vy;
+      this.vy += this.gravity;
+      if (this.y > H || this.opacity <= 0) {
+        this.x = Math.random() * W;
+        this.y = -20;
+        this.opacity = 1;
+        this.vy = Math.random() * 4 - 2;
+      }
+    };
+  }
+  for (var i = 0; i < num_hearts; i++) {
+    hearts.push(new Heart(Math.random() * W, Math.random() * H, 1, 0, 0));
+  }
+  function animate() {
+    requestAnimationFrame(animate);
+    context.clearRect(0, 0, W, H);
+    for (var i = 0; i < num_hearts; i++) {
+      hearts[i].draw();
+      hearts[i].update();
+    }
+  }
+  animate();
+</script>
+<body>
+  <div>Cảm ơn ăng iu
+    <div>Iu ăng nhứt</div>
+  </div>
+</body>

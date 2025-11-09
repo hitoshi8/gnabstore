@@ -1,0 +1,238 @@
+/* ===== RESPONSIVE NAVIGATION ===== */
+
+/* Desktop Navigation - Hiển thị trên màn hình lớn */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Mobile Navigation - Ẩn trên desktop */
+.mobile-nav {
+    display: none;
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    justify-content: space-between;
+}
+
+.hamburger-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1001;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-nav-item {
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 16px;
+}
+
+.mobile-nav-item:hover {
+    background: #f5f5f5;
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown {
+    position: relative;
+}
+
+.mobile-dropdown-btn {
+    width: 100%;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.mobile-dropdown-btn:hover {
+    background: #f5f5f5;
+}
+
+.mobile-dropdown-content {
+    display: none;
+    padding-left: 20px;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.mobile-dropdown.active .mobile-dropdown-content {
+    display: flex;
+}
+
+.mobile-dropdown-item {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.mobile-dropdown-item:hover {
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    body {
+        padding-top: 120px;
+    }
+    
+    .fixed-header {
+        padding: 10px 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+    
+    .fixed-header {
+        padding: 10px 15px;
+    }
+    
+    /* Ẩn desktop nav, hiện hamburger */
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-nav {
+        display: block;
+    }
+    
+    .hamburger-btn {
+        display: flex;
+    }
+    
+    /* Điều chỉnh logo cho mobile */
+    .signlogo {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    
+    /* Hamburger animation khi active */
+    .hamburger-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .hamburger-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .fixed-header {
+        padding: 8px 10px;
+    }
+    
+    .mobile-menu {
+        padding: 15px;
+    }
+    
+    .mobile-nav-item {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    
+    .signlogo {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+
+/* Ensure header stays on top */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Container adjustment for mobile */
+.container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Mobile login/register buttons */
+.mobile-nav .login-button,
+.mobile-nav .register-button {
+    border: 2px solid #3fdfff;
+    background: #fff;
+    color: #3fdfff;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.mobile-nav .login-button:hover,
+.mobile-nav .register-button:hover {
+    background: #3fdfff;
+    color: #fff;
+}
